@@ -40,5 +40,5 @@ $ rails server
 For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
 
-
-start 4.2 
+rails server -b $IP -p $PORT
+start chapter 5.3
