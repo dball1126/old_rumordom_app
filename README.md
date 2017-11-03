@@ -41,6 +41,6 @@ For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
 
 rails server -b $IP -p $PORT
-start  7.5 START
+start  listing 8.25 START
 
 
