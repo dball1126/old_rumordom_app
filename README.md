@@ -41,4 +41,4 @@ For more information, see the
 [*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
 
 rails server -b $IP -p $PORT
-start  CHAPTER 9.27 start listing
+start  CHAPTER 9.3 listing start
