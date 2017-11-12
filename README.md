@@ -37,8 +37,10 @@ If the test suite passes, you'll be ready to run the app in a local server:
 $ rails server
 ```
 
-For more information, see the
-[*Ruby on Rails Tutorial* book](http://www.railstutorial.org/book).
+For more information, see tby on Rails Tutorial* book](http://www.railstutorial.org/book).
 
-rails server -b $IP -p $PORT
-start  CHAPTER 9.3 listing start
+rails server -b $IP -p $PORT 
+start  CHAPTER 11.39 START   do exercises above activating the account START
+Last time the excercise was green and i deleted the integration test folder by accident
+
+Chapter 11.39 START excersise above also
