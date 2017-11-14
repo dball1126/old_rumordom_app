@@ -43,4 +43,9 @@ rails server -b $IP -p $PORT
 start  CHAPTER 11.39 START   do exercises above activating the account START
 Last time the excercise was green and i deleted the integration test folder by accident
 
-Chapter 11.39 START excersise above also
+Chapter 11.4 done but my account wont activate\\
+
+11.4 start i had to upload all the integration tests i deleted and started the new ones for 
+some poor motherfuckers
+
+users index test lines 19 and 21 were commented out, had to do this to make the tests pass.
