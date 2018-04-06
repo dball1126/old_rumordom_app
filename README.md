@@ -46,3 +46,8 @@ Last time the excercise was green and i deleted the integration test folder by a
 
 
 START CHAPTER 14.44 listing FINISHED
+
+
+
+I can now follow users
+Fixed this issue.
