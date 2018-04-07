@@ -51,3 +51,9 @@ START CHAPTER 14.44 listing FINISHED
 
 I can now follow users
 Fixed this issue.
+
+
+
+up to 7.36    recreating businesses from scratch and keeping an eye on making sure users are still followed.
+
+Finished business show page and confirmed following for user still working.  Ready for follow page for the business.

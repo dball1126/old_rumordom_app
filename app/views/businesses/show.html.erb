@@ -1,0 +1,18 @@
+<% provide(:title, @business.name) %>
+<div class="row">
+ <aside class="col-md-4">
+    <section class="business_info">
+      <h1>
+  <%= gravatar_for @business %>
+  <%= @business.name %>
+  <%= @business.address %>
+  <%= @business.state %>
+  <%= @business.city %>
+  <%= @business.zipcode %>
+  <%= @business.phone %>
+  <%= @business.email %>
+  <%= @business.description %>
+      </h1>
+    </section>
+  </aside>
+</div>
