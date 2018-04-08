@@ -1,18 +1,34 @@
 <% provide(:title, @business.name) %>
 <div class="row">
- <aside class="col-md-4">
-    <section class="business_info">
+  <aside class="col-md-4">
+    <section>
       <h1>
-  <%= gravatar_for @business %>
-  <%= @business.name %>
-  <%= @business.address %>
-  <%= @business.state %>
-  <%= @business.city %>
-  <%= @business.zipcode %>
-  <%= @business.phone %>
-  <%= @business.email %>
-  <%= @business.description %>
+        <%= gravatar_for @business %>
+        <%= @business.name %>
       </h1>
     </section>
+    
+    <section class="business_infos">
+      <section class="stats">
+      <%= render 'shared/statz' %>
+    </section>
+    <%= render 'followz_form' if logged_in? %>
+      <br><p>
+        <br><%= @business.name %></br>
+        <br><%= @business.address %></br>
+        <br><%= @business.city %>
+            <%= @business.state %>,
+           <%= @business.zipcode %></br>
+        <br><%= @business.phone %></br>
+        <br><%= @business.email %></br>
+      </br></p>
+    </section>
+    </section>
   </aside>
-</div>
+  </div>
+  <div> 
+  <div class="clearfix padding30">
+      <h3>Business Description</h3>
+      <p><%= @business.description %> XYZ Consulting is a new company that provides expertise in search marketing solutions for business on a worldwide basis, including website promotion, online advertising and search engine optimization techniques to improve its clients' positioning in the search engines. We will cater to the higher education market, including colleges, universities and professional educational institutions.</p>
+      
+</table>

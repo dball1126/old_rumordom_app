@@ -1,5 +1,13 @@
 class Business < ApplicationRecord
   before_save { self.email = email.downcase }
+  
+ 
+      has_many :passive_relationshipzs, class_name:  "Relationshipz",
+                                    foreign_key: "followedz_id",
+                                    dependent:   :destroy
+  has_many :followerzs, through: :passive_relationshipzs, source: :followerz                            
+  
+  
   validates :name,  presence: true, length: {maximum: 50}
   validates :address,  presence: true, length: {maximum: 50}
   validates :city,  presence: true, length: {maximum: 50}
@@ -11,5 +19,7 @@ class Business < ApplicationRecord
   #validates :email, presence: true, length: {maximum: 255},
   #                  format:     { with: VALID_EMAIL_REGEX },
   #                  uniqueness: { case_sensitive: false }
+  
+  
   
 end
