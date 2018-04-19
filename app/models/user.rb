@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :microposts, dependent: :destroy
+  has_many :experiences, dependent: :destroy
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -13,7 +14,7 @@ class User < ApplicationRecord
                                    foreign_key:  "followerz_id",
                                    dependent:    :destroy
   has_many :followingz, through: :active_relationshipzs, source: :followedz 
-  
+  has_many :followerzs, through: :passive_relationshipzs, source: :followerz
   
   
   
@@ -78,10 +79,20 @@ class User < ApplicationRecord
 
   # Returns a user's status feed.
   def feed
+   
+    
+    followingz_ids = "SELECT followedz_id FROM relationshipzs
+                     WHERE  followerz_id = :business_id"
+   Experience.where("business_id IN (#{followingz_ids})
+                     OR business_id = :business_id", business_id: id)
+             
+    
     following_ids = "SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id"
     Micropost.where("user_id IN (#{following_ids})
                      OR user_id = :user_id", user_id: id)
+              
+                    
   end
 
   # Follows a user.

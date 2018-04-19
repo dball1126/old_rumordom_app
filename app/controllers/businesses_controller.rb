@@ -1,5 +1,5 @@
 class BusinessesController < ApplicationController
-  #before_action :logged_in_user, only: [:index, :create]
+  before_action :logged_in_user, only: [:index, :create]
   
     
   def index
@@ -24,6 +24,7 @@ class BusinessesController < ApplicationController
 
   def show
     @business = Business.find(params[:id])
+    @experiences = Experience.where(business_id: @business)
     #redirect_to root_url and return unless @user.activated?
     
     #@experiences = Experience.where(business_id: @business)

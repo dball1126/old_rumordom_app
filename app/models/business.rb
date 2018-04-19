@@ -6,8 +6,8 @@ class Business < ApplicationRecord
                                     foreign_key: "followedz_id",
                                     dependent:   :destroy
   has_many :followerzs, through: :passive_relationshipzs, source: :followerz                            
-  
-  
+  has_many :experiences, dependent: :destroy
+  has_many :followingz, through: :active_relationshipzs, source: :followedz
   validates :name,  presence: true, length: {maximum: 50}
   validates :address,  presence: true, length: {maximum: 50}
   validates :city,  presence: true, length: {maximum: 50}

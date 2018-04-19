@@ -63,3 +63,5 @@ up to 14.2 adding following to businesses.
 
 followz form i removed the z off of followingz? to following?
 
+just ran rails db:migrate working on experiences
+just added the experiences controller and need to finish that and its views

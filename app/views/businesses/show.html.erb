@@ -13,6 +13,7 @@
       <%= render 'shared/statz' %>
     </section>
     <%= render 'followz_form' if logged_in? %>
+    <h3><%= link_to "Write about your recent experience ", new_business_experience_path(@business), class: "btn btn-lg btn-primary center" %></h3>
       <br><p>
         <br><%= @business.name %></br>
         <br><%= @business.address %></br>
@@ -31,4 +32,19 @@
       <h3>Business Description</h3>
       <p><%= @business.description %> XYZ Consulting is a new company that provides expertise in search marketing solutions for business on a worldwide basis, including website promotion, online advertising and search engine optimization techniques to improve its clients' positioning in the search engines. We will cater to the higher education market, including colleges, universities and professional educational institutions.</p>
       
-</table>
+      <div class="col-md-8">
+    <% if @business.experiences.any? %>
+      
+      <h3>Experiences (<%= @business.experiences.count %>)</h3>
+      <ol class="experiences">
+        <%= render @experiences %>
+      </ol>
+      
+    <% end %>
+  </div> 
+      
+</div>
+
+
+ 
+ 

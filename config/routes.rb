@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     member do
       get :followerzs
     end
+    resources :experiences, except: [:index, :show]
   end
   
   resources :account_activations, only: [:edit]
@@ -35,4 +36,6 @@ Rails.application.routes.draw do
   resources :microposts,          only: [:create, :destroy]
   resources :relationships,       only: [:create, :destroy]
   resources :relationshipzs,       only: [:create, :destroy]
+  resources :experiences,         only: [:create, :destroy]
+  
 end

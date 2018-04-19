@@ -62,3 +62,10 @@ Business.create!(name:  "Example Business",
                    email:       email,
                    description: description)
 end
+
+
+#businesses = Business.order(:created_at).take(6)
+#50.times do
+#  comment = Faker::Lorem.sentence(5)
+#  businesses.each { |business| business.experiences.create!(comment: comment) }
+#end
