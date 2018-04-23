@@ -65,3 +65,14 @@ followz form i removed the z off of followingz? to following?
 
 just ran rails db:migrate working on experiences
 just added the experiences controller and need to finish that and its views
+
+
+
+watch out micropost form might need comment instead of content
+
+
+user=(User.find_by_id(Experience.first.user_id)).name  code to pull name from experience in the feed
+
+
+
+13.52    adding a feed for experiences only

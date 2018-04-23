@@ -79,21 +79,45 @@ class User < ApplicationRecord
 
   # Returns a user's status feed.
   def feed
-   
+
+    #followingz_ids = "SELECT followedz_id FROM relationshipzs
+    #                 WHERE  followerz_id = :business_id"
+   #Experience.where("business_id IN (#{followingz_ids})
+    #                 OR business_id = :business_id", business_id: id)
+             
+    #following_ids = "SELECT followed_id FROM relationships
+     #                WHERE  follower_id = :user_id"
+    #Micropost.where("user_id IN (#{following_ids})
+    
+     #                OR user_id = :user_id", user_id: id)
+              
+    #following_ids+= "SELECT followed_id FROM relationships
+    #                 WHERE  "   
+    following_ids = "SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id"
+    
+    Experience.where("user_id IN (#{following_ids})
+                     OR user_id = :user_id", user_id: id) 
+  end
+
+  def feedz
+  
     
     followingz_ids = "SELECT followedz_id FROM relationshipzs
                      WHERE  followerz_id = :business_id"
-   Experience.where("business_id IN (#{followingz_ids})
-                     OR business_id = :business_id", business_id: id)
-             
+                     
     
-    following_ids = "SELECT followed_id FROM relationships
-                     WHERE  follower_id = :user_id"
-    Micropost.where("user_id IN (#{following_ids})
-                     OR user_id = :user_id", user_id: id)
-              
-                    
+    
+    
+    Experience.where("business_id IN (#{followingz_ids})
+                     OR business_id = :business_id", business_id: id)
+                     
+                     
+    
   end
+
+
+
 
   # Follows a user.
   def follow(other_user)

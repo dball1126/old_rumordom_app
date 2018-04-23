@@ -2,17 +2,17 @@
 <div class="row">
   <aside class="col-md-4">
     <section class="business_info">
-      <%= gravatar_for @user %>
-      <h1><%= @user.name %></h1>
-      <span><%= link_to "view my profile", @user %></span>
-      <span><b>Microposts:</b> <%= @user.microposts.count %></span>
+      <%= gravatar_for @business %>
+      <h1><%= @business.name %></h1>
+      <span><%= link_to "view my profile", @business %></span>
+      <span><b>Experiences:</b> <%= @user.experiences.count %></span>
     </section>
-    <section class="stats">
-      <%= render 'shared/stats' %>
-      <% if @users.any? %>
-        <div class="user_avatars">
-          <% @users.each do |user| %>
-            <%= link_to gravatar_for(user, size: 30), user %>
+    <section class="statzs">
+      <%= render 'shared/statzs' %>
+      <% if @businesses.any? %>
+        <div class="business_avatars">
+          <% @businesses.each do |business| %>
+            <%= link_to gravatar_for(business, size: 30), business %>
           <% end %>
         </div>
       <% end %>
@@ -20,10 +20,11 @@
   </aside>
   <div class="col-md-8">
     <h3><%= @title %></h3>
-    <% if @users.any? %>
-      <ul class="users follow">
-        <%= render @users %>
+    <% if @businesses.any? %>
+      <ul class="businesses follow">
+        <%= render @businesses %>
       </ul>
+      
       <%= will_paginate %>
     <% end %>
   </div>

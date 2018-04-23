@@ -8,6 +8,7 @@ class ExperiencesController < ApplicationController
 
   def create
       @experience = current_user.experiences.build(experience_params)
+     
       @experience.business = @business
     if @experience.save
     #@experience.save
@@ -15,12 +16,16 @@ class ExperiencesController < ApplicationController
       flash[:success] = "Experience created!"
       redirect_to @business
     else
+      @feedz_items = []
       @feed_items = []
       render 'static_pages/home'
     end
   end
 
   def destroy
+    @experience.destroy
+    flash[:success] = "Experience deleted"
+    redirect_to request.referrer || root_url
   end
   
   private
@@ -30,8 +35,8 @@ class ExperiencesController < ApplicationController
     end
     
     def set_business
-    @business = Business.find(params[:business_id])
-  end
+     @business = Business.find(params[:business_id])
+    end
     
     def correct_user
       @experience = current_user.experiences.find_by(id: params[:id])
