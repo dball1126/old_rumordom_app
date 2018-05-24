@@ -5,6 +5,11 @@ class BusinessesController < ApplicationController
   def index
     @businesses = Business.paginate(page: params[:business])
   end
+  
+  def import
+	  Business.import(params[:file])
+	  redirect_to root_url, notice: "Activity Data imported!"
+  end
 
   def new
     @business = Business.new

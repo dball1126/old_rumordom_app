@@ -28,6 +28,7 @@ Rails.application.routes.draw do
     member do
       get :followerzs
     end
+    collection { post :import }
     resources :experiences, except: [:index, :show]
   end
   
